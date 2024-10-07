@@ -1,0 +1,13 @@
+tested positive:
+user1,user17,user20,user23,user25
+
+vaccine:
+user1-user19
+
+trips:
+uer2,user8,uer9,user20
+
+close contact:
+user2,user5,user10,user18
+
+

@@ -1,0 +1,65 @@
+//count pfizer
+SELECT COUNT(*) FROM `Vaccine` WHERE `Vaccine`.`Company`= "Pfizer"
+
+//count johsnon 
+SELECT COUNT(*) FROM `Vaccine` WHERE `Vaccine`.`Company`= "Johnson&Johnson"
+
+//count moderna
+SELECT COUNT(*) FROM `Vaccine` WHERE `Vaccine`.`Company`= "Moderna"
+
+
+//count other
+SELECT COUNT(*) FROM `Vaccine` WHERE `Vaccine`.`Company`= "Other"
+
+
+//count astrazeneca
+SELECT COUNT(*) FROM `Vaccine` WHERE `Vaccine`.`Company`= "AstraZeneca"
+
+
+//count karantina kai work from home
+SELECT COUNT(*) FROM `User` WHERE `User`.`Work_from_home`=1
+
+
+//count no karantina (no work from home)
+SELECT COUNT(*) FROM `User` WHERE `User`.`Work_from_home`=0
+
+
+//count krousmata in department 0
+SELECT COUNT(*) FROM `User` INNER JOIN TestedPositive ON TestedPositive.UN = User.Username WHERE `User`.`DNumber`=0 AND TestedPositive.PositiveTestDate IS NOT NULL
+
+//count krousmata in department 1
+SELECT COUNT(*) FROM `User` INNER JOIN TestedPositive ON TestedPositive.UN = User.Username WHERE `User`.`DNumber`=1 AND TestedPositive.PositiveTestDate IS NOT NULL
+
+//count krousmata in department 2
+SELECT COUNT(*) FROM `User` INNER JOIN TestedPositive ON TestedPositive.UN = User.Username WHERE `User`.`DNumber`=2 AND TestedPositive.PositiveTestDate IS NOT NULL
+
+//count krousmata
+SELECT COUNT(*) FROM `User` INNER JOIN TestedPositive ON TestedPositive.UN = User.Username WHERE TestedPositive.PositiveTestDate IS NOT NULL
+
+
+//count mi krousmata
+SELECT COUNT(*) FROM `User` INNER JOIN TestedPositive ON TestedPositive.UN = User.Username WHERE TestedPositive.PositiveTestDate IS  NULL
+
+//not vaccinated
+SELECT COUNT(*) FROM `User` INNER JOIN `Vaccine` ON `User`.`Username` = `Vaccine`.`UN` WHERE `Vaccine`.`NumOfDoses`=0
+
+//dose 1
+SELECT COUNT(*) FROM `User` INNER JOIN `Vaccine` ON `User`.`Username` = `Vaccine`.`UN` WHERE `Vaccine`.`NumOfDoses`=1
+
+
+//dose 2
+SELECT COUNT(*) FROM `User` INNER JOIN `Vaccine` ON `User`.`Username` = `Vaccine`.`UN` WHERE `Vaccine`.`NumOfDoses`=2
+
+
+//dose 3
+SELECT COUNT(*) FROM `User` INNER JOIN `Vaccine` ON `User`.`Username` = `Vaccine`.`UN` WHERE `Vaccine`.`NumOfDoses`=3
+
+
+//have trip planned
+SELECT COUNT(*) FROM User INNER JOIN Profile ON Profile.UN = User.Username WHERE Profile.TripDepartureDate IS NOT NULL
+
+
+
+
+
+

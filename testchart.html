@@ -1,0 +1,215 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="styleChart" href="chartStyle.css">
+  </head>
+
+<body>
+  <h1> Statistics</h1>
+  <hr>
+<div style="width: 800px;">
+    <canvas id="employeeChart"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ec = document.getElementById('employeeChart');
+  
+    new Chart(ec, {
+      type: 'bar',
+      data: {
+        labels: ["Negative","Positive(quarantined)","Not vaccinated ","1 dose","2 doses","3 doses"],
+        datasets: [{
+          label: 'Number of Employees',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+<div style="width: 800px;">
+    <canvas id="vaccineChart"></canvas>
+  </div>
+  
+  
+  <script>
+    const vc = document.getElementById('vaccineChart');
+  
+    new Chart(vc, {
+      type: 'bar',
+      data: {
+        labels: ["Company1","Company2","Company3","Company4"],
+        datasets: [{
+          label: 'Number of Employees vaccinated with',
+          data: [30,40,12,5],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+<div style="width: 800px;">
+  <canvas id="workFromHomeChart"></canvas>
+</div>
+
+
+<script>
+  const wfhc = document.getElementById('workFromHomeChart');
+
+  new Chart(wfhc, {
+    type: 'bar',
+    data: {
+      labels: ["Working from home (quarantined)","Working from home (but not quarantined)","Not working from home","Have a trip (for work) planned"],
+      datasets: [{
+        label: 'Number of Employees',
+        data: [30,10,12],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div style="width: 800px;">
+  <canvas id="departmentsChart"></canvas>
+</div>
+
+
+<script>
+  const dc = document.getElementById('departmentsChart');
+
+  new Chart(dc, {
+    type: 'bar',
+    data: {
+      labels: ["Sales Assistants","Logistics department","IT department","Software Developers"],
+      datasets: [{
+        label: 'Number of Employees who are positive in each department',
+        data: [3,0,2,5],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div style="width: 400px;">
+  <canvas id="positivesChart"></canvas>
+</div>
+
+
+<script>
+  const pc = document.getElementById('positivesChart');
+
+  new Chart(pc, {
+    type: 'pie',
+    data: {
+      labels: [
+    'Positive employees with symptoms',
+    'Positive employees with no symptoms'
+  ],
+  datasets: [{
+    label: '',
+    data: [15, 20],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)'
+    ],
+    hoverOffset: 4
+    }],
+      
+  }});
+</script>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div style="width: 400px;">
+  <canvas id="tripsChart"></canvas>
+</div>
+
+
+<script>
+  const tc = document.getElementById('tripsChart');
+
+  new Chart(tc, {
+    type: 'pie',
+    data: {
+      labels: [
+    'Cancelled trips because of covid',
+    'Trips'
+  ],
+  datasets: [{
+    label: '',
+    data: [15, 50],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)'
+    ],
+    hoverOffset: 4
+    }],
+      
+  }});
+</script>
